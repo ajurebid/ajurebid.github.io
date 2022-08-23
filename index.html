@@ -61,7 +61,7 @@ https://templatemo.com/tm-505-stacked
                           <div class="home-box-content">
                             <div class="left-text">
                               <h4>Akun Ini <em>Dijual</em> </h4>
-                              <p><hSilahkan dilihat terlebih dahulu spesifikasi akun ini, sudah saya sertakan SS dan bila ada yang mau ditanyakan bisa langsung chat saya di contact.</p>
+                              <p>Silahkan dilihat terlebih dahulu spesifikasi akun ini, sudah saya sertakan SS dan bila ada yang mau ditanyakan bisa langsung chat saya di contact.</p>
                               <div class="primary-button">
                                 <a href="#3">Selengkapnya</a>
                               </div>
@@ -237,7 +237,7 @@ https://templatemo.com/tm-505-stacked
               <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <form name="wpu-contact-form">
+            <form name='form-ajurebid'>
               <div class="mb-3">
                 <label for="name" class="form-label" style="color: white;">Nama Lengkap</label>
                 <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
@@ -312,6 +312,19 @@ https://templatemo.com/tm-505-stacked
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+
+        <script>
+  const scriptURL = '<https://script.google.com/macros/s/AKfycbzEbb__8R85Cj8Z4nW9B3Ycaol9t-Rndj8EONy86j3eG-4npFDlNw2EyTT99OIskHI/exec>'
+  const form = document.forms['form-ajurebid']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 
     </body>
 </html>
